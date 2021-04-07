@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <v-main-wrapper></v-main-wrapper>
   </div>
 </template>
-
+<script>
+import vMainWrapper from './components/v-main-wrapper.vue'
+export default {
+  name: 'App',
+  components: {
+    vMainWrapper
+  }
+}
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
