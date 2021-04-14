@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="v-bottom-nav">
     <router-link :to="{ name: 'contacts' }"
       ><i class="material-icons">person_pin</i></router-link
     >

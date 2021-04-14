@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="v-main-wrapper">
     <v-header></v-header>
     <v-bottom-nav></v-bottom-nav>
   </div>
