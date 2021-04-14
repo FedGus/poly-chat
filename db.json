@@ -1,0 +1,10 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Fedor",
+      "phone": "8-800-555-35-35",
+      "status": "online"
+    }
+  ]
+}

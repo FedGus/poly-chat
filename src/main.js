@@ -2,7 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
-import store from "./store";
+import store from "./vuex/store";
 import "material-design-icons-iconfont";
 import "./assets/styles/styles.scss";
 
