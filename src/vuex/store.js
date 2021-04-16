@@ -6,12 +6,21 @@ Vue.use(Vuex);
 
 let store = new Vuex.Store({
   state: {
-    contacts: []
+    contacts: [],
+    currentUserChat: {}
   },
   getters: {},
   mutations: {
     SET_CONTACTS_TO_STORE(state, contacts) {
       state.contacts = contacts;
+    },
+    SET_USER_TO_HEAD(state, user) {
+      if (user) {
+        state.currentUserChat = user;
+      } else {
+        state.currentUserChat = ''
+      }
+
     }
   },
   actions: {
@@ -19,6 +28,9 @@ let store = new Vuex.Store({
       return axios.get("http://localhost:3000/contacts").then(contacts => {
         commit("SET_CONTACTS_TO_STORE", contacts.data);
       });
+    },
+    SET_USER_TO_HEADER({ commit }, user) {
+      commit('SET_USER_TO_HEAD', user);
     }
   }
 });

@@ -5,6 +5,12 @@
       "name": "Fedor",
       "phone": "8-800-555-35-35",
       "status": "online"
+    },
+    {
+      "id": 2,
+      "name": "Peter",
+      "phone": "8-800-550-05-05",
+      "status": "offline"
     }
   ]
 }
