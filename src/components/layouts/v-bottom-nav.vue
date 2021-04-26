@@ -3,7 +3,7 @@
     <router-link :to="{ name: 'contacts' }"
       ><i class="material-icons">person_pin</i></router-link
     >
-    <router-link :to="{ name: 'contacts' }"
+    <router-link :to="{ name: 'chats' }"
       ><i class="material-icons">chat</i></router-link
     >
     <router-link :to="{ name: 'contacts' }"
