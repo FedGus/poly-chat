@@ -13,7 +13,7 @@ const routes = [
   {
     path: "/contact",
     name: "contact",
-    contact: vContactUserInfo}
+    component: vContactUserInfo}
 ];
 
 const router = new VueRouter({
