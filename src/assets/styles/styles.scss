@@ -164,3 +164,86 @@
     }
   }
 }
+.v-user-chat {
+  margin-bottom: 200px;
+
+  .input__field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 70px;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    background: #ffffff;
+    padding: 0 $spacer*2;
+
+    .material-icons {
+      font-size: 36px;
+    }
+  }
+
+  &__textfield {
+    width: 80%;
+    padding: 16px;
+    border: 0;
+    box-shadow: inset 0 0 5px 1px #bdbdbd;
+    outline: transparent;
+    border-radius: $spacer*3;
+    font-size: 20px;
+  }
+}
+
+.v-message {
+  margin-bottom: $spacer*4;
+
+  &.chat__own {
+    display: flex;
+    justify-content: flex-end;
+
+    & .v-message__content:after {
+      content: '';
+      position: absolute;
+      right: -8px;
+      bottom: 10px;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-right-width: 0;
+      border-left-color: #bad3ff;
+    }
+  }
+
+  &.chat__others {
+    display: flex;
+    justify-content: flex-start;
+
+    & .v-message__content:before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      bottom: 10px;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-right-color: #bad3ff;
+      border-left-width: 0;
+    }
+  }
+
+  &__content {
+    background: $chat-box-bg;
+    border-radius: 4px;
+    padding: $spacer;
+    position: relative;
+  }
+
+  .content {
+    &__time {
+      position: absolute;
+      bottom: -22px;
+      right: 0;
+    }
+  }
+}

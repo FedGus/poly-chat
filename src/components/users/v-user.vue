@@ -1,5 +1,5 @@
 <template>
-  <div class="v-user">
+  <div class="v-user" @click="toUserChat">
     <div class="v-user__avatar"></div>
     <div class="v-user__info">
       <p class="info__name">
@@ -28,6 +28,13 @@ export default {
   },
   computed: {},
   mounted() {},
-  methods: {},
+  methods: {
+    toUserChat() {
+      this.$router.push({
+        name: 'chat',
+        params: { 'messages': this.user_data.chat, 'chat': this.user_data}
+      })
+    }
+  },
 };
 </script>
