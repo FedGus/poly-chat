@@ -23,8 +23,8 @@ const routes = [
     component: vUserList
   },
   {
-    path: "/chat",
-    name: "chat",
+    path: "/user",
+    name: "user",
     component: vUserChat,
     props: true
   }

@@ -7,32 +7,53 @@
       </div>
       <div class="info__tools">
         <button class="start-call">Call</button>
-        <button class="start-chat">Start chat</button>
+        <button class="start-chat" @click="checkChats">Start chat</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   name: "v-contact-user-info",
   props: {},
   data() {
     return {
-      contact_data: {},
+      contact_data: {}
     };
   },
   computed: {
-    ...mapState(["contacts"]),
+    ...mapState(["chats", "contacts"])
   },
   mounted() {
-    this.contacts.find((contact) => {
+    this.contacts.find(contact => {
       if (contact.id === this.$route.query.id) {
         this.contact_data = contact;
       }
     });
   },
-  methods: {},
+  methods: {
+    ...mapActions(["FETCH_CHATS", "SET_USER_TO_HEADER"]),
+    checkChats() {
+      if (!this.chats.length) {
+        this.FETCH_CHATS().then(() => {
+          this.toChat();
+        });
+      } else {
+        this.toChat();
+      }
+    },
+    toChat() {
+      this.chats.map(chat => {
+        if (chat.id === this.contact_data.id) {
+          this.$router.push({
+            name: "user",
+            params: { messages: chat.chat, user: chat }
+          });
+        }
+      });
+    }
+  }
 };
 </script>

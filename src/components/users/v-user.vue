@@ -10,7 +10,9 @@
       </p>
     </div>
 
-    <div class="v-user__time">{{ user_data.chat[user_data.chat.length - 1].time }}</div>
+    <div class="v-user__time">
+      {{ user_data.chat[user_data.chat.length - 1].time }}
+    </div>
   </div>
 </template>
 
@@ -20,8 +22,8 @@ export default {
   props: {
     user_data: {
       type: Object,
-      default: () => {},
-    },
+      default: () => {}
+    }
   },
   data() {
     return {};
@@ -31,10 +33,10 @@ export default {
   methods: {
     toUserChat() {
       this.$router.push({
-        name: 'chat',
-        params: { 'messages': this.user_data.chat, 'chat': this.user_data}
-      })
+        name: "user",
+        params: { messages: this.user_data.chat, user: this.user_data }
+      });
     }
-  },
+  }
 };
 </script>

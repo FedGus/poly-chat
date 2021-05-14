@@ -19,9 +19,8 @@ let store = new Vuex.Store({
       if (user) {
         state.currentUserChat = user;
       } else {
-        state.currentUserChat = ''
+        state.currentUserChat = "";
       }
-
     },
     SET_CHATS_TO_STORE(state, chats) {
       state.chats = chats;
@@ -39,7 +38,14 @@ let store = new Vuex.Store({
       });
     },
     SET_USER_TO_HEADER({ commit }, user) {
-      commit('SET_USER_TO_HEAD', user);
+      commit("SET_USER_TO_HEAD", user);
+    },
+    SET_MESSAGE_TO_CHAT({ commit }, { userId, chat }) {
+      return axios
+        .put("http://localhost:3000/chats/" + userId, chat)
+        .then((response) => {
+          return response;
+        });
     }
   }
 });
